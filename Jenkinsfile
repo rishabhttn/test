@@ -17,12 +17,12 @@ pipeline {
            echo "Hello master"
         }
       }
-      /*stage('Sonar Analysis') {
-         when { expression { params.BRANCH == 'master' } }
+      stage('Sonar Analysis') {
+         when { branch 'release1' }
          steps {
             echo "${env.GIT_COMMIT}"
          }
-      }*/
+      }
       stage('Analysis') {
          steps {
             sh 'env'
