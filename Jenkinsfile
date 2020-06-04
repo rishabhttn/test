@@ -11,7 +11,6 @@ pipeline {
            echo "Hello"
         }
       }
-   stages {
       stage('CheckOut'){
           steps{
               git branch: "${params.BRANCH}", url: 'https://github.com/rishabhttn/test.git'
