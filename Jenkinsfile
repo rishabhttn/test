@@ -5,19 +5,20 @@ pipeline {
   }
   
   stages {
-      stage('first-stage'){
+      stage('CheckOut'){
+          steps{
+              git 'https://github.com/rishabhttn/test.git'
+          }
+      }
+	stage('first-stage'){
         when { anyOf { branch '*/release1/*'; branch 'master' } }
         steps{
            echo "Hello"
         }
       }
-      stage('CheckOut'){
-          steps{
-              git branch: "${params.BRANCH}", url: 'https://github.com/rishabhttn/test.git'
-          }
-      }
+      
       stage('Sonar Analysis') {
-         when { expression { params.BRANCH == 'master' } }
+         when { branch 'release1' }
          steps {
             echo "${env.GIT_COMMIT}"
          }
