@@ -1,0 +1,80 @@
+{
+   "containerDefinitions": [
+     {
+       "portMappings": [
+         {
+           "hostPort": 80,
+           "protocol": "tcp",
+           "containerPort": 80
+         }
+       ],
+       "cpu": 2048,
+       "environment": [
+         {
+           "name": "APP_DEBUG",
+           "value": "false"
+         },
+         {
+           "name": "APP_ENV",
+           "value": "production"
+         },
+         {
+           "name": "APP_NAME",
+           "value": "dev-content-service"
+         },
+         {
+           "name": "APP_TIMEZONE",
+           "value": "UTC"
+         },
+         {
+           "name": "BACKFILL_SHOWS",
+           "value": "false"
+         },
+         {
+           "name": "CACHE_PURGE_API_ENABLED",
+           "value": "true"
+         },
+         {
+           "name": "DD_SERVICE_NAME",
+           "value": "dev-content-service"
+         },
+         {
+           "name": "DD_TRACE_ANALYTICS_ENABLED",
+           "value": "true"
+         },
+         {
+           "name": "DISABLE_KAFKA",
+           "value": "true"
+         },
+         {
+           "name": "ENABLE_REDIS_CACHE",
+           "value": "true"
+         },
+         {
+           "name": "LOG_CHANNEL",
+           "value": "daily"
+         },
+         {
+           "name": "NEWRELIC_KEY",
+           "value": ""
+         },
+         {
+           "name": "PUSH_NUM_WORKERS",
+           "value": "4"
+         }
+       ],
+       "memory": 2048,
+       "volumesFrom": [],
+       "image": "IMAGE_URL",
+       "essential": true,
+       "name": "dev-content-service-app"
+     }
+   ],
+   "placementConstraints": [],
+   "family": "dev-content-service-app",
+   "requiresCompatibilities": [
+     "EC2"
+   ],
+   "networkMode": "awsvpc",
+   "volumes": []
+ }
